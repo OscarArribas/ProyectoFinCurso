@@ -1,0 +1,114 @@
+VerPDF As screen:
+    Fill: =RGBA(97, 169, 17 , 0.5)
+
+    PdfViewer1 As pdfViewer:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Document: =varPdf
+        Fill: =RGBA(0, 0, 0, 0.5)
+        Height: =881
+        Y: =142
+        ZIndex: =1
+
+    Label20 As label:
+        Align: =Align.Center
+        FontWeight: =FontWeight.Bold
+        Height: =142
+        Size: =45
+        Text: ="Visor de PDF"
+        Width: =640
+        ZIndex: =3
+
+    Button10 As button:
+        Fill: =RGBA(49, 69, 17, 1)
+        Height: =113
+        HoverFill: =ColorFade(Self.Fill, 20%)
+        OnSelect: |
+            =GuardarPDFSharepoint.Run({file:{name: "Recluta_"&Gallery1.Selected.DNI&".pdf",contentBytes: varPdf}})
+            ;
+            Set(popuppdf,true)
+        Size: =24
+        Text: ="Confirmar"
+        Width: =529
+        X: =111
+        Y: =1023
+        ZIndex: =4
+
+    Button11_1 As button:
+        Fill: =RGBA(99, 139, 44, 1)
+        Height: =113
+        Size: =24
+        Text: =""
+        Width: =111
+        Y: =1023
+        ZIndex: =5
+
+    Icon10_1 As icon.Undo:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =80
+        Icon: =Icon.Undo
+        Width: =111
+        Y: =1042
+        ZIndex: =6
+
+    Button12_1 As button:
+        Fill: =RGBA(0, 0, 0, 0)
+        Height: =111
+        HoverFill: =ColorFade(RGBA(100, 140, 45, 0.3), 40%)
+        OnSelect: =Navigate(CrearPDF)
+        Size: =24
+        Text: =
+        Width: =111
+        Y: =1025
+        ZIndex: =7
+
+    Group2 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =12
+
+        Rectangle9 As rectangle:
+            Fill: =RGBA(0, 0, 0, 0.3)
+            Height: =1136
+            Visible: =popuppdf
+            Width: =640
+            ZIndex: =8
+
+        Rectangle10 As rectangle:
+            Fill: =RGBA(99, 139, 44, 1)
+            Height: =450
+            Visible: =popuppdf
+            Width: =460
+            X: =88
+            Y: =291
+            ZIndex: =9
+
+        Label14 As label:
+            Align: =Align.Center
+            FontWeight: =FontWeight.Bold
+            Height: =132
+            Size: =40
+            Text: ="PDF guardado con éxito"
+            Visible: =popuppdf
+            Width: =414
+            X: =111
+            Y: =381
+            ZIndex: =10
+
+        Button13 As button:
+            Fill: =RGBA(54, 176, 75, 1)
+            Height: =70
+            HoverFill: =ColorFade(Self.Fill, 20%)
+            OnSelect: |-
+                =Set(popuppdf,false)
+                ;
+                Navigate(InformacionPersonal)
+            Size: =24
+            Text: ="Aceptar"
+            Visible: =popuppdf
+            Width: =280
+            X: =178
+            Y: =592
+            ZIndex: =11
+

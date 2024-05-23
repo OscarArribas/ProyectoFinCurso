@@ -1,0 +1,84 @@
+InformacionPersonal As screen:
+    Fill: =RGBA(97, 169, 17 , 0.5)
+
+    Label2 As label:
+        Align: =Align.Center
+        FontWeight: =FontWeight.Semibold
+        Height: =70
+        Size: =35
+        Text: =Gallery1.Selected.Nombre & " " & Gallery1.Selected.Apellidos
+        Width: =640
+        Y: =66
+        ZIndex: =1
+
+    Button4 As button:
+        BorderColor: =ColorFade(Self.Fill, -35%)
+        Fill: =RGBA(70, 95, 29, 1)
+        Height: =130
+        HoverFill: =ColorFade(Self.Fill, 20%)
+        OnSelect: =Navigate(CrearPDF)
+        Size: =24
+        Text: |-
+            ="Crear
+            PDF"
+        Width: =400
+        X: =121
+        Y: =278
+        ZIndex: =2
+
+    Button4_1 As button:
+        BorderColor: =ColorFade(Self.Fill, -35%)
+        Fill: =RGBA(70, 95, 29, 1)
+        Height: =130
+        HoverFill: =ColorFade(Self.Fill, 20%)
+        OnSelect: =Navigate(InformacionRecluta)
+        Size: =24
+        Text: |-
+            ="Información
+            Personal"
+        Width: =400
+        X: =121
+        Y: =756
+        ZIndex: =3
+
+    Button4_2 As button:
+        BorderColor: =ColorFade(Self.Fill, -35%)
+        Fill: =RGBA(70, 95, 29, 1)
+        Height: =130
+        HoverFill: =ColorFade(Self.Fill, 20%)
+        OnSelect: =Navigate(AñadirResultados)
+        Size: =24
+        Text: |-
+            ="Resultados
+            Pruebas"
+        Width: =400
+        X: =121
+        Y: =517
+        ZIndex: =4
+
+    Button4_3 As button:
+        BorderColor: =ColorFade(Self.Fill, 0%)
+        Fill: =RGBA(49, 69, 17 , 1)
+        Height: =107
+        HoverFill: =ColorFade(Self.Fill, -20%)
+        OnSelect: =Navigate(ListaReclutas)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =24
+        Text: ="Volver"
+        Width: =640
+        Y: =1029
+        ZIndex: =5
+
+    Label3 As label:
+        Align: =Align.Center
+        Height: =70
+        Size: =21
+        Text: =Gallery1.Selected.DNI
+        Width: =560
+        X: =42
+        Y: =136
+        ZIndex: =6
+

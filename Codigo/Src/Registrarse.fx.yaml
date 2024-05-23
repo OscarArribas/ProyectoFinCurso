@@ -1,0 +1,214 @@
+Registrarse As screen:
+    Fill: =RGBA(97, 169, 17 , 0.5)
+    OnVisible: |-
+        =Set(mostrarcontraseñareg,false)
+        ;
+        Set(mostrarrepetircontraseña,false)
+
+    Button3 As button:
+        BorderColor: =ColorFade(Self.Fill, 0%)
+        Fill: =RGBA(49, 69, 17, 1)
+        Height: =121
+        OnSelect: |-
+            =If(
+                TextInput4_1.Text=TextInput4_3.Text
+                ,
+                Collect(
+                    Instructores,
+                    {
+                        Identificacion:TextInput4_2.Text,
+                        Contraseña: TextInput4_1.Text,
+                        Rango: TextInput4.Text
+                    }
+                )
+                ;
+                Notify(
+                    "Registrado con éxito",
+                    NotificationType.Success,
+                    2000
+                )
+                ;
+                Navigate(Login)
+                ,
+                Notify(
+                    "Las Contraseñas no coinciden",
+                    NotificationType.Error,
+                    2000
+                )
+                ;
+                Reset(TextInput4_3)
+            )
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =24
+        Text: ="Confirmar"
+        Width: =640
+        Y: =1015
+        ZIndex: =1
+
+    TextInput4 As text:
+        BorderColor: =RGBA(49, 69, 17, 1)
+        Default: =
+        Height: =70
+        HoverFill: =RGBA(170, 230, 185, 1)
+        Size: =21
+        Width: =560
+        X: =40
+        Y: =291
+        ZIndex: =2
+
+    TextInput4_1 As text:
+        BorderColor: =RGBA(49, 69, 17, 1)
+        Default: =
+        Height: =70
+        HoverFill: =RGBA(170, 230, 185, 1)
+        Mode: |-
+            =If(
+                mostrarcontraseñareg=true,
+                TextMode.SingleLine,
+                TextMode.Password
+            )
+        Size: =21
+        Width: =560
+        X: =40
+        Y: =468
+        ZIndex: =3
+
+    TextInput4_2 As text:
+        BorderColor: =RGBA(49, 69, 17, 1)
+        Default: =
+        Height: =70
+        HoverFill: =RGBA(170, 230, 185, 1)
+        Size: =21
+        Width: =560
+        X: =40
+        Y: =830
+        ZIndex: =4
+
+    Label4 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =70
+        Size: =21
+        Text: |-
+            ="Identificación:"
+        Width: =560
+        X: =40
+        Y: =221
+        ZIndex: =5
+
+    Label4_1 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =70
+        Size: =21
+        Text: |-
+            ="Contraseña:"
+        Width: =560
+        X: =40
+        Y: =398
+        ZIndex: =6
+
+    Label4_2 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =70
+        Size: =21
+        Text: |-
+            ="Rango:"
+        Width: =560
+        X: =40
+        Y: =760
+        ZIndex: =7
+
+    TextInput4_3 As text:
+        BorderColor: =RGBA(49, 69, 17, 1)
+        Default: =
+        Height: =70
+        HoverFill: =RGBA(170, 230, 185, 1)
+        Mode: |-
+            =If(
+                mostrarrepetircontraseña=true,
+                TextMode.SingleLine,
+                TextMode.Password
+            )
+        Size: =21
+        Width: =560
+        X: =40
+        Y: =645
+        ZIndex: =8
+
+    Label4_3 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =70
+        Size: =21
+        Text: |-
+            ="Repite la contraseña:"
+        Width: =560
+        X: =40
+        Y: =575
+        ZIndex: =9
+
+    Label5 As label:
+        Align: =Align.Center
+        FontWeight: =FontWeight.Bold
+        Height: =120
+        Size: =45
+        Text: ="Registrarse"
+        Width: =640
+        Y: =58
+        ZIndex: =10
+
+    Icon8 As icon.Undo:
+        Color: =RGBA(0, 0, 0, 1)
+        Height: =67
+        Icon: =Icon.Undo
+        OnSelect: =Navigate(Login)
+        Width: =55
+        X: =15
+        Y: =21
+        ZIndex: =11
+
+    Icon2_1 As icon.Hide:
+        Color: =RGBA(32, 46, 9, 1)
+        Height: =49
+        Icon: =Icon.Hide
+        OnSelect: =Set(mostrarcontraseñareg,false)
+        Visible: =mostrarcontraseñareg
+        Width: =55
+        X: =531
+        Y: =483
+        ZIndex: =12
+
+    Icon3_1 As icon.View:
+        Color: =RGBA(32, 46, 9, 1)
+        Height: =57
+        Icon: =Icon.View
+        OnSelect: =Set(mostrarcontraseñareg,true)
+        Visible: =!mostrarcontraseñareg
+        Width: =55
+        X: =531
+        Y: =475
+        ZIndex: =13
+
+    Icon2_2 As icon.Hide:
+        Color: =RGBA(32, 46, 9, 1)
+        Height: =49
+        Icon: =Icon.Hide
+        OnSelect: =Set(mostrarrepetircontraseña,false)
+        Visible: =mostrarrepetircontraseña
+        Width: =55
+        X: =531
+        Y: =660
+        ZIndex: =14
+
+    Icon3_2 As icon.View:
+        Color: =RGBA(32, 46, 9, 1)
+        Height: =57
+        Icon: =Icon.View
+        OnSelect: =Set(mostrarrepetircontraseña,true)
+        Visible: =!mostrarrepetircontraseña
+        Width: =55
+        X: =531
+        Y: =652
+        ZIndex: =15
+

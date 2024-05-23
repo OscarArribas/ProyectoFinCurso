@@ -1,0 +1,170 @@
+Login As screen:
+    BackgroundImage: =
+    ImagePosition: =ImagePosition.Fill
+    OnVisible: |
+        =Set(mostrarcontraseña,false)
+
+    HtmlText1 As htmlViewer:
+        Height: =App.Height
+        HtmlText: |-
+            ="<div style=""
+                background: linear-gradient(35deg, rgba(97, 169, 17, 0.8) 0%, rgba(59, 99, 22, 1) 70%);
+                height: "&App.Height-1&"px"";>
+            </div>"
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Width: =Login.Width
+        ZIndex: =1
+
+    TextInput1 As text:
+        BorderColor: =RGBA(49, 69, 17, 1)
+        Default: =""
+        Height: =78
+        HintText: ="Identificación"
+        HoverFill: =RGBA(170, 230, 185, 1)
+        Size: =21
+        Width: =476
+        X: =83
+        Y: =393
+        ZIndex: =2
+
+    TextInput2 As text:
+        BorderColor: =RGBA(49, 69, 17, 1)
+        Default: =""
+        Height: =78
+        HintText: ="Contraseña"
+        HoverFill: =RGBA(170, 230, 185, 1)
+        Mode: |-
+            =If(
+                mostrarcontraseña=true,
+                TextMode.SingleLine,
+                TextMode.Password
+            )
+        Size: =21
+        Width: =476
+        X: =83
+        Y: =598
+        ZIndex: =3
+
+    Button1 As button:
+        BorderColor: =ColorFade(Self.Fill, -35%)
+        Fill: =RGBA(49, 69, 17, 1)
+        Height: =70
+        HoverFill: =ColorFade(Self.Fill, 20%)
+        OnSelect: |-
+            =If(
+                IsBlank(
+                    First(
+                        Filter(
+                            Instructores,
+                            Identificacion=TextInput1.Text
+                        )
+                    )
+                ),
+                Notify(
+                    "Usuario inexistente",
+                    NotificationType.Error,
+                    2000
+                ),
+                If(
+                    LookUp(
+                        Instructores,
+                        Identificacion = TextInput1.Text,
+                        Contraseña
+                    ) <> TextInput2.Text,
+                    Notify(
+                        "Contraseña incorrecta",
+                        NotificationType.Error,
+                        2000
+                    ),
+                    Navigate(ListaReclutas)
+                )    
+            )
+        RadiusBottomLeft: =50
+        RadiusBottomRight: =50
+        RadiusTopLeft: =50
+        RadiusTopRight: =50
+        Size: =24
+        Text: ="Entrar"
+        Width: =311
+        X: =164
+        Y: =790
+        ZIndex: =4
+
+    Label1 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =100
+        Size: =70
+        Text: ="LOGIN"//747474
+        Width: =332
+        X: =153
+        Y: =110
+        ZIndex: =5
+
+    Label1_1 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =44
+        Size: =30
+        Text: |-
+            ="Identificación:"
+        Width: =301
+        X: =83
+        Y: =327
+        ZIndex: =6
+
+    Label1_2 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =44
+        Size: =30
+        Text: |-
+            ="Contraseña:"
+        Width: =266
+        X: =83
+        Y: =541
+        ZIndex: =7
+
+    Button1_1 As button:
+        BorderColor: =ColorFade(Self.Fill, -35%)
+        Fill: =RGBA(49, 69, 17, 1)
+        Height: =70
+        HoverFill: =ColorFade(Self.Fill, 20%)
+        OnSelect: =Navigate(Registrarse)
+        RadiusBottomLeft: =50
+        RadiusBottomRight: =50
+        RadiusTopLeft: =50
+        RadiusTopRight: =50
+        Size: =24
+        Text: ="Registrarse"
+        Width: =311
+        X: =163
+        Y: =920
+        ZIndex: =8
+
+    Icon2 As icon.Hide:
+        Color: =RGBA(32, 46, 9, 1)
+        Height: =49
+        Icon: =Icon.Hide
+        OnSelect: =Set(mostrarcontraseña,false)
+        Visible: =mostrarcontraseña
+        Width: =55
+        X: =496
+        Y: =616
+        ZIndex: =9
+
+    Icon3 As icon.View:
+        Color: =RGBA(32, 46, 9, 1)
+        Height: =57
+        Icon: =Icon.View
+        OnSelect: =Set(mostrarcontraseña,true)
+        Visible: =!mostrarcontraseña
+        Width: =55
+        X: =496
+        Y: =608
+        ZIndex: =10
+

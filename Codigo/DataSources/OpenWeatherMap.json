@@ -1,0 +1,8 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_openweathermap-5f13e2b903f2c46bd3-5fd7aa1dd9c3fc5681",
+    "Name": "OpenWeatherMap",
+    "ServiceKind": "ConnectedWadl",
+    "Type": "ServiceInfo"
+  }
+]

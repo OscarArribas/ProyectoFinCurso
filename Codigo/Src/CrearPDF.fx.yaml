@@ -1,0 +1,329 @@
+CrearPDF As screen:
+
+    Container1 As groupContainer.manualLayoutContainer:
+        Height: =1025
+        Width: =640
+        ZIndex: =1
+
+        Label18 As label:
+            Align: =Align.Center
+            FontWeight: =FontWeight.Semibold
+            Height: =64
+            Size: =24
+            Text: |
+                ="Recluta con DNI: "&Gallery1.Selected.DNI
+            Underline: =true
+            Width: =628
+            X: =12
+            Y: =58
+            ZIndex: =1
+
+        Label21 As label:
+            Align: =Align.Right
+            Height: =48
+            Size: =14
+            Text: |-
+                ="Fecha: "&Today()&"   "
+            Width: =616
+            X: =12
+            Y: =155
+            ZIndex: =6
+
+        Label21_1 As label:
+            Height: =59
+            Size: =18
+            Text: |-
+                ="Instructor: "&Gallery1.Selected.Instructor
+            Width: =592
+            X: =48
+            Y: =144
+            ZIndex: =7
+
+        Label22 As label:
+            Height: =46
+            Size: =14
+            Text: |-
+                ="Nombre: "&Gallery1.Selected.Nombre
+            Width: =524
+            X: =66
+            Y: =252
+            ZIndex: =8
+
+        Label22_1 As label:
+            Height: =38
+            Size: =14
+            Text: |-
+                ="Apellidos: "&Gallery1.Selected.Apellidos
+            Width: =524
+            X: =66
+            Y: =298
+            ZIndex: =9
+
+        Label22_2 As label:
+            Height: =38
+            Size: =14
+            Text: |-
+                ="Fecha de nacimiento: "&Gallery1.Selected.FechaNacimiento
+            Width: =524
+            X: =66
+            Y: =336
+            ZIndex: =10
+
+        Label22_3 As label:
+            FontWeight: =FontWeight.Semibold
+            Height: =54
+            Size: =20
+            Text: ="Resultados"
+            Underline: =true
+            Width: =165
+            X: =237
+            Y: =471
+            ZIndex: =11
+
+        Label22_4 As label:
+            Height: =56
+            Size: =18
+            Text: |-
+                ="Flexiones:     "
+            Width: =128
+            X: =64
+            Y: =583
+            ZIndex: =12
+
+        Label22_5 As label:
+            Height: =56
+            Size: =18
+            Text: |-
+                ="Salto:     "
+            Width: =86
+            X: =66
+            Y: =639
+            ZIndex: =13
+
+        Label22_6 As label:
+            Height: =56
+            Size: =18
+            Text: |-
+                ="50 metros lisos:     "
+            Width: =188
+            X: =66
+            Y: =695
+            ZIndex: =14
+
+        Label22_7 As label:
+            Height: =56
+            Size: =18
+            Text: |-
+                ="1000 metros lisos:     "
+            Width: =216
+            X: =66
+            Y: =750
+            ZIndex: =15
+
+        Label22_8 As label:
+            Height: =56
+            Size: =18
+            Text: |-
+                ="Circuito de agilidad:     "
+            Width: =234
+            X: =64
+            Y: =863
+            ZIndex: =16
+
+        Label22_9 As label:
+            Height: =56
+            Size: =18
+            Text: |-
+                ="50 metros natación:     "
+            Width: =234
+            X: =64
+            Y: =807
+            ZIndex: =17
+
+        Rectangle11 As rectangle:
+            Fill: =RGBA(0, 0, 0, 1)
+            Height: =1
+            Width: =524
+            X: =66
+            Y: =635
+            ZIndex: =18
+
+        Rectangle11_1 As rectangle:
+            Fill: =RGBA(0, 0, 0, 1)
+            Height: =1
+            Width: =524
+            X: =66
+            Y: =693
+            ZIndex: =19
+
+        Rectangle11_2 As rectangle:
+            Fill: =RGBA(0, 0, 0, 1)
+            Height: =1
+            Width: =524
+            X: =66
+            Y: =750
+            ZIndex: =20
+
+        Rectangle11_3 As rectangle:
+            Fill: =RGBA(0, 0, 0, 1)
+            Height: =1
+            Width: =524
+            X: =66
+            Y: =806
+            ZIndex: =21
+
+        Rectangle11_4 As rectangle:
+            Fill: =RGBA(0, 0, 0, 1)
+            Height: =1
+            Width: =524
+            X: =66
+            Y: =861
+            ZIndex: =22
+
+        Rectangle11_5 As rectangle:
+            Fill: =RGBA(0, 0, 0, 1)
+            Height: =1
+            Width: =524
+            X: =66
+            Y: =918
+            ZIndex: =23
+
+        Label22_10 As label:
+            Align: =Align.Center
+            Height: =56
+            Size: =16
+            Text: |-
+                =First(
+                    Filter(
+                        ResultadosPruebas,
+                        Recluta=Gallery1.Selected.DNI
+                    )
+                ).Num_Flexiones
+            Width: =170
+            X: =420
+            Y: =579
+            ZIndex: =24
+
+        Label22_11 As label:
+            Align: =Align.Center
+            Height: =56
+            Size: =16
+            Text: |-
+                =First(
+                    Filter(
+                        ResultadosPruebas,
+                        Recluta=Gallery1.Selected.DNI
+                    )
+                ).Salto
+            Width: =170
+            X: =420
+            Y: =635
+            ZIndex: =25
+
+        Label22_12 As label:
+            Align: =Align.Center
+            Height: =56
+            Size: =16
+            Text: |-
+                =First(
+                    Filter(
+                        ResultadosPruebas,
+                        Recluta=Gallery1.Selected.DNI
+                    )
+                ).'50_M_Lisos'
+            Width: =170
+            X: =420
+            Y: =693
+            ZIndex: =26
+
+        Label22_13 As label:
+            Align: =Align.Center
+            Height: =56
+            Size: =16
+            Text: |-
+                =First(
+                    Filter(
+                        ResultadosPruebas,
+                        Recluta=Gallery1.Selected.DNI
+                    )
+                ).'1000_M_Lisos'
+            Width: =170
+            X: =420
+            Y: =751
+            ZIndex: =27
+
+        Label22_14 As label:
+            Align: =Align.Center
+            Height: =56
+            Size: =16
+            Text: |-
+                =First(
+                    Filter(
+                        ResultadosPruebas,
+                        Recluta=Gallery1.Selected.DNI
+                    )
+                ).'50_M_Agua'
+            Width: =170
+            X: =420
+            Y: =805
+            ZIndex: =28
+
+        Label22_15 As label:
+            Align: =Align.Center
+            Height: =56
+            Size: =16
+            Text: |-
+                =First(
+                    Filter(
+                        ResultadosPruebas,
+                        Recluta=Gallery1.Selected.DNI
+                    )
+                ).Circuito_Agilidad
+            Width: =170
+            X: =420
+            Y: =863
+            ZIndex: =29
+
+    Button9 As button:
+        Fill: =RGBA(49, 69, 17, 1)
+        Height: =111
+        HoverFill: =ColorFade(Self.Fill, 20%)
+        OnSelect: |-
+            =Set(varPdf,PDF(Container1,{ExpandContainers:true}))
+            ;
+            Navigate(VerPDF)
+        Size: =24
+        Text: ="Guardar PDF"
+        Width: =529
+        X: =111
+        Y: =1025
+        ZIndex: =2
+
+    Button11 As button:
+        Fill: =RGBA(99, 139, 44, 1)
+        Height: =111
+        Size: =24
+        Text: =""
+        Width: =111
+        Y: =1025
+        ZIndex: =3
+
+    Icon10 As icon.Undo:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =80
+        Icon: =Icon.Undo
+        Width: =111
+        Y: =1042
+        ZIndex: =4
+
+    Button12 As button:
+        Fill: =RGBA(0, 0, 0, 0)
+        Height: =111
+        HoverFill: =ColorFade(RGBA(100, 140, 45, 0.3), 40%)
+        OnSelect: =Navigate(InformacionPersonal)
+        Size: =24
+        Text: =
+        Width: =111
+        Y: =1025
+        ZIndex: =5
+

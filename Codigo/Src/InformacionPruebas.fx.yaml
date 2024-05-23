@@ -1,0 +1,206 @@
+InformacionPruebas As screen:
+    Fill: =RGBA(97, 169, 17 , 0.5)
+
+    Rectangle2 As rectangle:
+        Fill: =RGBA(49, 69, 17 , 1)
+        Height: =120
+        Width: =640
+        Y: =1016
+        ZIndex: =1
+
+    "Gallery2 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+        DelayItemLoading: =true
+        Height: =1016
+        Items: =ExplicacionPruebas
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplatePadding: =0
+        TemplateSize: =302
+        ZIndex: =2
+
+        Image2 As image:
+            Height: =233
+            Image: =ThisItem.ImagenPrueba
+            OnSelect: =Select(Parent)
+            RadiusBottomLeft: =8
+            RadiusBottomRight: =8
+            RadiusTopLeft: =8
+            RadiusTopRight: =8
+            Width: =228
+            X: =395
+            Y: =49
+            ZIndex: =1
+
+        Title3 As label:
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =30
+            Text: =ThisItem.NombrePrueba
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - 173
+            X: =57
+            Y: =37
+            ZIndex: =2
+
+        Subtitle3 As label:
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =247
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =20
+            Text: =ThisItem.Descripcion
+            VerticalAlign: =VerticalAlign.Top
+            Width: =298
+            X: =57
+            Y: =123
+            ZIndex: =3
+
+        Separator3 As rectangle:
+            Height: =8
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - Self.Height
+            ZIndex: =5
+
+        Rectangle4 As rectangle:
+            BorderColor: =RGBA(49, 69, 17, 1)
+            Fill: =RGBA(49, 69, 17, 1)
+            Height: =Parent.TemplateHeight - Separator3.Height
+            OnSelect: =Select(Parent)
+            Visible: =ThisItem.IsSelected
+            Width: =4
+            ZIndex: =6
+
+    Button2_13 As button:
+        BorderColor: =ColorFade(Self.Fill, 0%)
+        BorderThickness: =5
+        Fill: =RGBA(96, 128, 48, 1)
+        Height: =120
+        HoverFill: =ColorFade(Self.Fill, 20%)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =24
+        Text: =""
+        X: =480
+        Y: =1016
+        ZIndex: =5
+
+    Icon5 As icon.Health:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =82
+        Icon: =Icon.Health
+        Width: =97
+        X: =513
+        Y: =1038
+        ZIndex: =6
+
+    Icon4_1 As icon.OptionsList:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =95
+        Icon: =Icon.OptionsList
+        Width: =100
+        X: =350
+        Y: =1028
+        ZIndex: =7
+
+    Icon6_1 As icon.AddUser:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =84
+        Icon: =Icon.AddUser
+        Width: =92
+        X: =200
+        Y: =1035
+        ZIndex: =8
+
+    Icon7_2 As icon.Settings:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =91
+        Icon: =Icon.Weather
+        Width: =89
+        X: =35
+        Y: =1030
+        ZIndex: =9
+
+    Button2_16 As button:
+        BorderThickness: =0
+        Color: =RGBA(255, 255, 255, 0)
+        Fill: =RGBA(56, 96, 178, 0)
+        Height: =120
+        HoverBorderColor: =ColorFade(Self.BorderColor, 0%)
+        HoverColor: =RGBA(255, 255, 255, 0)
+        HoverFill: =ColorFade(RGBA(56, 96, 178, 0), 0%)
+        OnSelect: =Navigate(PantallaAPI)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =24
+        Text: =""
+        Width: =161
+        Y: =1016
+        ZIndex: =10
+
+    Button2_17 As button:
+        BorderThickness: =0
+        Color: =RGBA(255, 255, 255, 0)
+        Fill: =RGBA(56, 96, 178, 0)
+        Height: =120
+        HoverColor: =RGBA(255, 255, 255, 0)
+        HoverFill: =ColorFade(RGBA(56, 96, 178, 0), 0%)
+        OnSelect: =Navigate(AñadirRecluta)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =24
+        Text: =""
+        X: =160
+        Y: =1016
+        ZIndex: =11
+
+    Button2_18 As button:
+        BorderThickness: =0
+        Color: =RGBA(255, 255, 255, 0)
+        Fill: =RGBA(56, 96, 178, 0)
+        Height: =120
+        HoverColor: =RGBA(255, 255, 255, 0)
+        HoverFill: =ColorFade(RGBA(56, 96, 178, 0), 0%)
+        OnSelect: =Navigate(ListaReclutas)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =24
+        Text: =""
+        Width: =158
+        X: =320
+        Y: =1016
+        ZIndex: =12
+
+    Button2_14 As button:
+        BorderColor: =ColorFade(Self.Fill, 0%)
+        BorderThickness: =5
+        Color: =RGBA(255, 255, 255, 0)
+        Fill: =RGBA(0, 121, 187, 0)
+        Height: =120
+        HoverFill: =ColorFade(Self.Fill, 20%)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =24
+        Text: =""
+        X: =480
+        Y: =1016
+        ZIndex: =13
+

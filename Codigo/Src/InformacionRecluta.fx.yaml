@@ -1,0 +1,210 @@
+InformacionRecluta As screen:
+    Fill: =RGBA(97, 169, 17 , 0.5)
+
+    Rectangle8 As rectangle:
+        BorderColor: =RGBA(99, 139, 44, 1)
+        Fill: =RGBA(232, 244, 217, 1)
+        Height: =499
+        Width: =562
+        X: =39
+        Y: =293
+        ZIndex: =1
+
+    Label11_5 As label:
+        Align: =Align.Center
+        BorderColor: =RGBA(99, 139, 44, 1)
+        BorderThickness: =1
+        Height: =99
+        Size: =22
+        Text: =Gallery1.Selected.Instructor
+        Width: =367
+        X: =234
+        Y: =293
+        ZIndex: =7
+
+    Label12_1 As label:
+        Align: =Align.Center
+        BorderColor: =RGBA(99, 139, 44, 1)
+        BorderThickness: =1
+        FontWeight: =FontWeight.Semibold
+        Height: =100
+        Size: =22
+        Text: |-
+            ="DNI:"
+        Width: =195
+        X: =39
+        Y: =392
+        ZIndex: =9
+
+    Label12_2 As label:
+        Align: =Align.Center
+        BorderColor: =RGBA(99, 139, 44, 1)
+        BorderThickness: =1
+        FontWeight: =FontWeight.Semibold
+        Height: =100
+        Size: =22
+        Text: |-
+            ="Fecha
+            Nacimiento:"
+        Width: =195
+        X: =39
+        Y: =692
+        ZIndex: =10
+
+    Label12_3 As label:
+        Align: =Align.Center
+        BorderColor: =RGBA(99, 139, 44, 1)
+        BorderThickness: =1
+        FontWeight: =FontWeight.Semibold
+        Height: =100
+        Size: =22
+        Text: |-
+            ="Apellidos:"
+        Width: =195
+        X: =39
+        Y: =592
+        ZIndex: =11
+
+    Label12_4 As label:
+        Align: =Align.Center
+        BorderColor: =RGBA(99, 139, 44, 1)
+        BorderThickness: =1
+        FontWeight: =FontWeight.Semibold
+        Height: =100
+        Size: =22
+        Text: |-
+            ="Nombre:"
+        Width: =195
+        X: =39
+        Y: =492
+        ZIndex: =12
+
+    Label12_5 As label:
+        Align: =Align.Center
+        BorderColor: =RGBA(99, 139, 44, 1)
+        BorderThickness: =1
+        FontWeight: =FontWeight.Semibold
+        Height: =100
+        Size: =22
+        Text: |-
+            ="Instructor:"
+        Width: =195
+        X: =39
+        Y: =292
+        ZIndex: =13
+
+    Button4_4 As button:
+        BorderColor: =ColorFade(Self.Fill, 0%)
+        Fill: =RGBA(49, 69, 17 , 1)
+        Height: =107
+        HoverFill: =ColorFade(Self.Fill, -20%)
+        OnSelect: =Navigate(InformacionPersonal)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =24
+        Text: ="Volver"
+        Width: =640
+        Y: =1029
+        ZIndex: =14
+
+    Label13 As label:
+        Align: =Align.Center
+        FontWeight: =FontWeight.Bold
+        Height: =131
+        Size: =35
+        Text: |-
+            ="INFORMACIÓN
+             PERSONAL"
+        Width: =640
+        Y: =77
+        ZIndex: =15
+
+    TextInput8_1 As text:
+        Align: =Align.Center
+        BorderColor: =RGBA(99, 139, 44, 1)
+        BorderThickness: =1
+        Default: =Gallery1.Selected.Nombre
+        Fill: =RGBA(232, 244, 217, 1)
+        Height: =100
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =21
+        Width: =367
+        X: =234
+        Y: =492
+        ZIndex: =17
+
+    TextInput8_2 As text:
+        Align: =Align.Center
+        BorderColor: =RGBA(99, 139, 44, 1)
+        BorderThickness: =1
+        Default: =Gallery1.Selected.FechaNacimiento
+        Fill: =RGBA(232, 244, 217, 1)
+        Height: =100
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =21
+        Width: =367
+        X: =234
+        Y: =692
+        ZIndex: =18
+
+    TextInput8_3 As text:
+        Align: =Align.Center
+        BorderColor: =RGBA(99, 139, 44, 1)
+        BorderThickness: =1
+        Default: =Gallery1.Selected.Apellidos
+        Fill: =RGBA(232, 244, 217, 1)
+        Height: =100
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =21
+        Width: =367
+        X: =234
+        Y: =592
+        ZIndex: =19
+
+    Label11_6 As label:
+        Align: =Align.Center
+        BorderColor: =RGBA(99, 139, 44, 1)
+        BorderThickness: =1
+        Height: =99
+        Size: =22
+        Text: =Gallery1.Selected.DNI
+        Width: =367
+        X: =234
+        Y: =393
+        ZIndex: =21
+
+    Button7_1 As button:
+        BorderColor: =ColorFade(Self.Fill, -35%)
+        Fill: =RGBA(70, 95, 29, 1)
+        Height: =70
+        HoverFill: =ColorFade(Self.Fill, 20%)
+        OnSelect: |-
+            =Patch(
+                Filter(
+                    Reclutas,
+                    DNI=Gallery1.Selected.DNI
+                ),
+               {
+                    Nombre: TextInput8_1.Text,
+                    Apellidos: TextInput8_3.Text,
+                    FechaNacimiento: DateValue(TextInput8_2.Text)
+               }
+            )
+        Size: =24
+        Text: ="Actualizar"
+        Width: =280
+        X: =180
+        Y: =855
+        ZIndex: =22
+

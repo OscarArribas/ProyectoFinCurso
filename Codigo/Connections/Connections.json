@@ -1,0 +1,110 @@
+{
+  "8efc8c03-f47b-44ff-af60-39d368979791": {
+    "appActions": [
+      "providers/PowerPlatform.Governance/Operations/Read",
+      "providers/PowerPlatform.Governance/Operations/Write"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "SharePoint",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1685/1.0.1685.3700/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {
+      "https://educajcyl.sharepoint.com/sites/AppProyectoFinal": {
+        "dataSources": {
+          "ExplicacionPruebas": {
+            "tableName": "be53bb5c-bf4e-4dca-a454-dea70cefeb61"
+          },
+          "Instructores": {
+            "tableName": "291b10b9-3f48-4740-9562-9bb0e703c103"
+          },
+          "Reclutas": {
+            "tableName": "e8fad368-a202-4529-97f1-d71e4af57faa"
+          },
+          "ResultadosPruebas": {
+            "tableName": "fcb7604b-34c6-4dce-ae87-04920ca027b6"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "Reclutas",
+      "ResultadosPruebas",
+      "Instructores",
+      "ExplicacionPruebas"
+    ],
+    "dependencies": {},
+    "dependents": [
+      "9b7336c7-efda-4ef8-a9af-6738f2f4b793"
+    ],
+    "id": "8efc8c03-f47b-44ff-af60-39d368979791"
+  },
+  "90ff6b29-49c8-4119-8404-15ed88e8c587": {
+    "appActions": [
+      "getCurrentWeather"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "OpenWeatherMap",
+      "iconUri": "https://prodapiicons.cdn.powerappscdn.net/20240521t000000zf47574b6b5ee4b0ab9f2a111c9ec5b81/customconnectoricon.jpg",
+      "id": "/providers/microsoft.powerapps/apis/shared_openweathermap-5f13e2b903f2c46bd3-5fd7aa1dd9c3fc5681",
+      "isCustomApiConnection": true,
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "OpenWeatherMap"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "90ff6b29-49c8-4119-8404-15ed88e8c587"
+  },
+  "9b7336c7-efda-4ef8-a9af-6738f2f4b793": {
+    "appActions": [
+      "Run"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Flujos lógicos",
+      "iconUri": "https://connectoricons-prod.azureedge.net/u/patelronak/specialtrain-logicflows-2/1.0.1692.3734/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "8efc8c03-f47b-44ff-af60-39d368979791": {
+          "value": "shared_sharepointonline"
+        },
+        "workflowDisplayName": {
+          "value": "GuardarPDFSharepoint"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "5f189729-9a78-43ed-baed-3542bb3d27b3"
+        }
+      },
+      "parameterHintsV2": {
+        "shared_sharepointonline": {
+          "value": "8efc8c03-f47b-44ff-af60-39d368979791"
+        },
+        "workflowDisplayName": {
+          "value": "GuardarPDFSharepoint"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "5f189729-9a78-43ed-baed-3542bb3d27b3"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "GuardarPDFSharepoint"
+    ],
+    "dependencies": {
+      "shared_sharepointonline": "8efc8c03-f47b-44ff-af60-39d368979791"
+    },
+    "dependents": [],
+    "id": "9b7336c7-efda-4ef8-a9af-6738f2f4b793"
+  }
+}
