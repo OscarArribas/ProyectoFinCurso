@@ -32,7 +32,7 @@ InformacionPruebas As screen:
             ZIndex: =1
 
         Title3 As label:
-            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            FontWeight: =FontWeight.Semibold
             Height: =65
             OnSelect: =Select(Parent)
             PaddingBottom: =0
@@ -48,7 +48,6 @@ InformacionPruebas As screen:
             ZIndex: =2
 
         Subtitle3 As label:
-            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
             Height: =330
             OnSelect: =Select(Parent)
             Overflow: =Overflow.Scroll
