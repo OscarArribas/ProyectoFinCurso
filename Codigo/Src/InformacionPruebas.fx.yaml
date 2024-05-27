@@ -33,7 +33,7 @@ InformacionPruebas As screen:
 
         Title3 As label:
             FontWeight: =FontWeight.Semibold
-            Height: =65
+            Height: =75
             OnSelect: =Select(Parent)
             PaddingBottom: =0
             PaddingLeft: =0
@@ -42,9 +42,9 @@ InformacionPruebas As screen:
             Size: =40
             Text: =ThisItem.NombrePrueba
             VerticalAlign: =VerticalAlign.Top
-            Width: =Parent.TemplateWidth - 173
+            Width: =529
             X: =39
-            Y: =37
+            Y: =27
             ZIndex: =2
 
         Subtitle3 As label:
