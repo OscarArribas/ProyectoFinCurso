@@ -1025,19 +1025,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "InformacionRecluta.TextInput8_2.AccessibleLabel"
+                  "fullyQualifiedName": "InformacionRecluta.DatePicker2.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "InformacionRecluta.TextInput8_2.AccessibleLabel",
+                  "fullyQualifiedName": "InformacionRecluta.DatePicker2.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "InformacionRecluta",
-                "type": "InformacionRecluta.TextInput8_2"
+                "type": "InformacionRecluta.DatePicker2"
               }
             }
           ],
@@ -1535,19 +1535,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "InformacionRecluta.TextInput8_2.Default"
+                  "fullyQualifiedName": "InformacionRecluta.DatePicker2.DefaultDate"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "InformacionRecluta.TextInput8_2.Default",
+                  "fullyQualifiedName": "InformacionRecluta.DatePicker2.DefaultDate",
                   "relativeAddress": 0
                 }
               },
               "properties": {
-                "member": "Default",
+                "member": "DefaultDate",
                 "module": "InformacionRecluta",
-                "type": "InformacionRecluta.TextInput8_2"
+                "type": "InformacionRecluta.DatePicker2"
               }
             }
           ],
