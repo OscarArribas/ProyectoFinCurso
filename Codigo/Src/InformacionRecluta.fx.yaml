@@ -174,10 +174,13 @@ InformacionRecluta As screen:
         HoverFill: =ColorFade(Self.Fill, 20%)
         OnSelect: |-
             =Patch(
-                Filter(
+                
                     Reclutas,
-                    DNI=Gallery1.Selected.DNI
-                ),
+                    LookUp(
+                        Reclutas,
+                        DNI=Gallery1.Selected.DNI
+                    ),
+                
                {
                     Nombre: TextInput8_1.Text,
                     Apellidos: TextInput8_3.Text,
@@ -201,6 +204,7 @@ InformacionRecluta As screen:
         ZIndex: =14
 
     DatePicker2 As datepicker:
+        BorderColor: =RGBA(0, 0, 0, 0)
         BorderThickness: =0
         DefaultDate: =Gallery1.Selected.FechaNacimiento
         Fill: =RGBA(232, 244, 217, 1)
